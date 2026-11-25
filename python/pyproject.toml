@@ -1,0 +1,24 @@
+[project]
+name = "cpix-api-client"
+version = "1.0.0"
+description = "DoveRunner CPIX API client for Python"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "requests>=2.0",
+]
+
+[tool.poetry]
+# The client is a set of top-level modules rather than a package directory.
+packages = [
+    { include = "cpix_client.py", from = "src" },
+    { include = "content_packaging_data.py", from = "src" },
+    { include = "drm_type.py", from = "src" },
+    { include = "encryption_scheme.py", from = "src" },
+    { include = "exceptions.py", from = "src" },
+    { include = "track_type.py", from = "src" },
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
